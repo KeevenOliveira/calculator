@@ -1,22 +1,31 @@
 import Number from "../Number";
 
-const NumbersContainer = () => {
+interface NumbersContainerProps {
+  setValue: (value: string) => void;
+}
+
+const NumbersContainer = ({ setValue }: NumbersContainerProps) => {
   return (
     <div className="text-6xl flex flex-col items-center">
       <div>
-        <Number>7</Number>
-        <Number>8</Number>
-        <Number>9</Number>
+        <Number setValue={setValue}>7</Number>
+        <Number setValue={setValue}>8</Number>
+        <Number setValue={setValue}>9</Number>
       </div>
       <div>
-        <Number>4</Number>
-        <Number>5</Number>
-        <Number>6</Number>
+        <Number setValue={setValue}>4</Number>
+        <Number setValue={setValue}>5</Number>
+        <Number setValue={setValue}>6</Number>
       </div>
       <div>
-        <Number>1</Number>
-        <Number>2</Number>
-        <Number>3</Number>
+        <Number setValue={setValue}>1</Number>
+        <Number setValue={setValue}>2</Number>
+        <Number setValue={setValue}>3</Number>
+      </div>
+      <div>
+        <Number setValue={setValue}>0</Number>
+        <Number>.</Number>
+        <Number>←</Number>
       </div>
     </div>
   );
