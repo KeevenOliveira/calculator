@@ -1,7 +1,9 @@
-import Number from "../Number";
+import { SetStateAction } from "react";
 
+import Number from "../Number";
+import DeleteLast from "../DeleteLast";
 interface NumbersContainerProps {
-  setValue: (value: string) => void;
+  setValue: React.Dispatch<SetStateAction<number>>;
 }
 
 const NumbersContainer = ({ setValue }: NumbersContainerProps) => {
@@ -24,8 +26,8 @@ const NumbersContainer = ({ setValue }: NumbersContainerProps) => {
       </div>
       <div>
         <Number setValue={setValue}>0</Number>
-        <Number>.</Number>
-        <Number>←</Number>
+        <Number setValue={setValue}>.</Number>
+        <DeleteLast setValue={setValue} />
       </div>
     </div>
   );

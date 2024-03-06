@@ -1,22 +1,27 @@
-import { useState } from "react";
+import { SetStateAction } from "react";
 
+import { Button } from "../../styles/button";
 interface NumberProps {
   children: React.ReactNode;
-  setValue?: any;
+  setValue: React.Dispatch<SetStateAction<number>>;
 }
 
 const Number = ({ children, setValue }: NumberProps) => {
   return (
-    <button
-      className="p-5 px-10"
+    <Button
+      className="p-5 px-12"
       onClick={() => {
         if (children) {
-          setValue((prev: string) => prev + children);
+          setValue((prev: number) => {
+            const str = prev.toString();
+            const newValue = str === "0" ? children : str + children;
+            return parseInt(newValue.toString());
+          });
         }
       }}
     >
       {children}
-    </button>
+    </Button>
   );
 };
 
