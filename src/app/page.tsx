@@ -13,9 +13,9 @@ export default function Home() {
         className="bg-black color-white outline-none -webkit-appearance-none -moz-appearance-textfield w-screen h-2/5 text-8xl text-end"
         type="number"
         value={value}
-        onChange={(e) => setValue(parseInt(e.target.value))}
+        onChange={(e) => setValue(parseFloat(e.target.value))}
       />
-      <div className="text-6xl flex flex-row items-center">
+      <div className="text-6xl flex flex-row justify-end items-center">
         <NumbersContainer setValue={setValue} />
         <MathOperators setValue={setValue} />
       </div>

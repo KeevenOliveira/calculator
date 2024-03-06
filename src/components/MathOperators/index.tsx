@@ -1,3 +1,4 @@
+import Equal from "../Equal";
 import Operator from "../Operator";
 
 interface MathOperatorsProps {
@@ -16,6 +17,7 @@ const MathOperators = ({ setValue }: MathOperatorsProps) => {
       <div className="flex flex-col">
         <Operator setValue={setValue}>(</Operator>
         <Operator setValue={setValue}>)</Operator>
+        <Equal />
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ const Number = ({ children, setValue }: NumberProps) => {
           setValue((prev: number) => {
             const str = prev.toString();
             const newValue = str === "0" ? children : str + children;
-            return parseInt(newValue.toString());
+            return parseFloat(newValue.toString());
           });
         }
       }}

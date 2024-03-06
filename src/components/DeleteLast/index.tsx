@@ -11,7 +11,7 @@ const DeleteLast = ({ setValue }: DeleteLastProps) => {
       if (prev === 0 || !prev) return 0;
       const str = prev.toString();
       const newValue = str.slice(0, -1);
-      return parseInt(newValue);
+      return parseFloat(newValue);
     });
   };
 
