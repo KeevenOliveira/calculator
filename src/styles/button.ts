@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 interface ButtonProps {
   color?: string;
-  bakgroundColor?: string;
+  backgroundColor?: string;
 }
 
 export const Button = styled.button<ButtonProps>`
   color: ${(props) => (props.color ? props.color : "")};
   background-color: ${(props) =>
-    props.bakgroundColor ? props.bakgroundColor : ""};
+    props.backgroundColor ? props.backgroundColor : ""};
 
   &:hover {
     color: #eeeeee;
