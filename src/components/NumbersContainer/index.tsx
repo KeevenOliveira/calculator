@@ -8,7 +8,7 @@ interface NumbersContainerProps {
 
 const NumbersContainer = ({ setValue }: NumbersContainerProps) => {
   return (
-    <div className="text-6xl flex flex-col items-center">
+    <div>
       <div>
         <Number setValue={setValue}>7</Number>
         <Number setValue={setValue}>8</Number>

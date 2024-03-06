@@ -2,9 +2,10 @@
 import { useState } from "react";
 
 import NumbersContainer from "@/components/NumbersContainer";
+import MathOperators from "@/components/MathOperators";
 
 export default function Home() {
-  const [value, setValue] = useState("0");
+  const [value, setValue] = useState(0);
 
   return (
     <main className="w-full h-dvh">
@@ -12,10 +13,12 @@ export default function Home() {
         className="bg-black color-white outline-none -webkit-appearance-none -moz-appearance-textfield w-screen h-2/5 text-8xl text-end"
         type="number"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => setValue(parseInt(e.target.value))}
       />
-
-      <NumbersContainer setValue={setValue} />
+      <div className="text-6xl flex flex-row items-center">
+        <NumbersContainer setValue={setValue} />
+        <MathOperators setValue={setValue} />
+      </div>
     </main>
   );
 }
