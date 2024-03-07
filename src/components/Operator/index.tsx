@@ -4,12 +4,24 @@ import { Button } from "@/styles/button";
 
 interface OperatorProps {
   children: React.ReactNode;
-  setValue: React.Dispatch<SetStateAction<number>>;
+  setValue: React.Dispatch<SetStateAction<string>>;
 }
 
-const Operator = ({ children }: OperatorProps) => {
+const Operator = ({ children, setValue }: OperatorProps) => {
   return (
-    <Button color="#808080" className="p-5 px-12 color">
+    <Button
+      onClick={() => {
+        if (!children) return;
+        setValue((prev: string) => {
+          if (prev === "0" || !prev) {
+            return "";
+          }
+          return prev + children;
+        });
+      }}
+      color="#808080"
+      className="p-5 px-12 color"
+    >
       {children}
     </Button>
   );

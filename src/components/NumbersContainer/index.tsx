@@ -3,7 +3,7 @@ import { SetStateAction } from "react";
 import Number from "../Number";
 import DeleteLast from "../DeleteLast";
 interface NumbersContainerProps {
-  setValue: React.Dispatch<SetStateAction<number>>;
+  setValue: React.Dispatch<SetStateAction<string>>;
 }
 
 const NumbersContainer = ({ setValue }: NumbersContainerProps) => {

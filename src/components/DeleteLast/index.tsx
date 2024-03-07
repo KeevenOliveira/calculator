@@ -2,16 +2,14 @@ import { SetStateAction } from "react";
 import { Button } from "@/styles/button";
 
 interface DeleteLastProps {
-  setValue: React.Dispatch<SetStateAction<number>>;
+  setValue: React.Dispatch<SetStateAction<string>>;
 }
 
 const DeleteLast = ({ setValue }: DeleteLastProps) => {
   const deleteLast = () => {
-    setValue((prev: number) => {
-      if (prev === 0 || !prev) return 0;
-      const str = prev.toString();
-      const newValue = str.slice(0, -1);
-      return parseFloat(newValue);
+    setValue((prev: string) => {
+      if (prev === "0" || !prev) return "0";
+      return prev.slice(0, -1);
     });
   };
 

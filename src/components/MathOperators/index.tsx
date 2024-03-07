@@ -2,7 +2,7 @@ import Equal from "../Equal";
 import Operator from "../Operator";
 
 interface MathOperatorsProps {
-  setValue: React.Dispatch<React.SetStateAction<number>>;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const MathOperators = ({ setValue }: MathOperatorsProps) => {
@@ -17,7 +17,7 @@ const MathOperators = ({ setValue }: MathOperatorsProps) => {
       <div className="flex flex-col">
         <Operator setValue={setValue}>(</Operator>
         <Operator setValue={setValue}>)</Operator>
-        <Equal />
+        <Equal setValue={setValue} />
       </div>
     </div>
   );

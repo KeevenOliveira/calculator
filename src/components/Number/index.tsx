@@ -3,7 +3,7 @@ import { SetStateAction } from "react";
 import { Button } from "../../styles/button";
 interface NumberProps {
   children: React.ReactNode;
-  setValue: React.Dispatch<SetStateAction<number>>;
+  setValue: React.Dispatch<SetStateAction<string>>;
 }
 
 const Number = ({ children, setValue }: NumberProps) => {
@@ -12,10 +12,11 @@ const Number = ({ children, setValue }: NumberProps) => {
       className="p-5 px-12"
       onClick={() => {
         if (children) {
-          setValue((prev: number) => {
-            const str = prev.toString();
-            const newValue = str === "0" ? children : str + children;
-            return parseFloat(newValue.toString());
+          setValue((prev: string) => {
+            if (prev === "0") {
+              return children.toString();
+            }
+            return prev + children;
           });
         }
       }}
