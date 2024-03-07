@@ -7,7 +7,7 @@
     "distDir": "../out"
   },
   "package": {
-    "productName": "calculadora",
+    "productName": "Calculadora",
     "version": "0.1.0"
   },
   "tauri": {
@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.calculator.dev",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -56,10 +56,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 700,
         "resizable": true,
-        "title": "calculadora",
-        "width": 800
+        "title": "Calculadora",
+        "width": 710
       }
     ]
   }
