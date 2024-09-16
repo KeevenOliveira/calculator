@@ -1,30 +1,31 @@
-import { SetStateAction } from "react";
-
+import React from "react";
 import { Button } from "@/styles/button";
 
 interface OperatorProps {
-  children: React.ReactNode;
-  setValue: React.Dispatch<SetStateAction<string>>;
+  operator: string;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Operator = ({ children, setValue }: OperatorProps) => {
+const Operator: React.FC<OperatorProps> = ({ operator, setValue }) => {
+  const handleClick = React.useCallback(() => {
+    setValue((prev: string) => {
+      if (prev === "0" || !prev) return operator;
+      const lastChar = prev[prev.length - 1];
+      if (
+        ["+", "-", "*", "/"].includes(lastChar) &&
+        ["+", "-", "*", "/"].includes(operator)
+      ) {
+        return prev.slice(0, -1) + operator;
+      }
+      return prev + operator;
+    });
+  }, [operator, setValue]);
+
   return (
-    <Button
-      onClick={() => {
-        if (!children) return;
-        setValue((prev: string) => {
-          if (prev === "0" || !prev) {
-            return "";
-          }
-          return prev + children;
-        });
-      }}
-      color="#808080"
-      className="p-5 px-12 color"
-    >
-      {children}
+    <Button onClick={handleClick} color="#808080" className="p-5 px-12 color">
+      {operator}
     </Button>
   );
 };
 
-export default Operator;
+export default React.memo(Operator);

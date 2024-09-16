@@ -1,17 +1,17 @@
-import { SetStateAction } from "react";
+import { memo, useCallback } from "react";
+
 import { Button } from "@/styles/button";
 
 interface DeleteLastProps {
-  setValue: React.Dispatch<SetStateAction<string>>;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const DeleteLast = ({ setValue }: DeleteLastProps) => {
-  const deleteLast = () => {
-    setValue((prev: string) => {
-      if (prev === "0" || !prev) return "0";
-      return prev.slice(0, -1);
-    });
-  };
+const DeleteLast: React.FC<DeleteLastProps> = ({ setValue }) => {
+  const deleteLast = useCallback(() => {
+    setValue((prev: string) =>
+      prev === "0" || prev?.length === 1 ? "0" : prev?.slice(0, -1)
+    );
+  }, [setValue]);
 
   return (
     <Button className="p-5 px-12" onClick={deleteLast}>
@@ -20,4 +20,4 @@ const DeleteLast = ({ setValue }: DeleteLastProps) => {
   );
 };
 
-export default DeleteLast;
+export default memo(DeleteLast);

@@ -1,29 +1,24 @@
-import { SetStateAction } from "react";
-
+import { useCallback, memo } from "react";
 import { Button } from "../../styles/button";
+
 interface NumberProps {
-  children: React.ReactNode;
-  setValue: React.Dispatch<SetStateAction<string>>;
+  digit: string;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Number = ({ children, setValue }: NumberProps) => {
+const Number: React.FC<NumberProps> = ({ digit, setValue }) => {
+  const handleClick = useCallback(() => {
+    setValue((prev: string) => {
+      if (digit === "." && prev.includes(".")) return prev;
+      return prev === "0" ? digit : prev + digit;
+    });
+  }, [digit, setValue]);
+
   return (
-    <Button
-      className="p-5 px-12"
-      onClick={() => {
-        if (children) {
-          setValue((prev: string) => {
-            if (prev === "0") {
-              return children.toString();
-            }
-            return prev + children;
-          });
-        }
-      }}
-    >
-      {children}
+    <Button className="p-5 px-12" onClick={handleClick}>
+      {digit}
     </Button>
   );
 };
 
-export default Number;
+export default memo(Number);

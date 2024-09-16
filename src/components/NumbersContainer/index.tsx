@@ -1,36 +1,33 @@
-import { SetStateAction } from "react";
-
+import React from "react";
 import Number from "../Number";
 import DeleteLast from "../DeleteLast";
+
 interface NumbersContainerProps {
-  setValue: React.Dispatch<SetStateAction<string>>;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const NumbersContainer = ({ setValue }: NumbersContainerProps) => {
+const NumbersContainer: React.FC<NumbersContainerProps> = ({ setValue }) => {
+  const numbers = [
+    ["7", "8", "9"],
+    ["4", "5", "6"],
+    ["1", "2", "3"],
+    ["0", "."],
+  ];
+
   return (
     <div>
-      <div>
-        <Number setValue={setValue}>7</Number>
-        <Number setValue={setValue}>8</Number>
-        <Number setValue={setValue}>9</Number>
-      </div>
-      <div>
-        <Number setValue={setValue}>4</Number>
-        <Number setValue={setValue}>5</Number>
-        <Number setValue={setValue}>6</Number>
-      </div>
-      <div>
-        <Number setValue={setValue}>1</Number>
-        <Number setValue={setValue}>2</Number>
-        <Number setValue={setValue}>3</Number>
-      </div>
-      <div>
-        <Number setValue={setValue}>0</Number>
-        <Number setValue={setValue}>.</Number>
-        <DeleteLast setValue={setValue} />
-      </div>
+      {numbers.map((row, rowIndex) => (
+        <div key={`row-${rowIndex}`}>
+          {row.map((num) => (
+            <Number key={num} digit={num} setValue={setValue} />
+          ))}
+          {rowIndex === numbers.length - 1 && (
+            <DeleteLast setValue={setValue} />
+          )}
+        </div>
+      ))}
     </div>
   );
 };
 
-export default NumbersContainer;
+export default React.memo(NumbersContainer);

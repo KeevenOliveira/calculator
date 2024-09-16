@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import NumbersContainer from "@/components/NumbersContainer";
 import MathOperators from "@/components/MathOperators";
+import { toast } from "react-toastify";
 
 export default function Home() {
   const [value, setValue] = useState("0");
