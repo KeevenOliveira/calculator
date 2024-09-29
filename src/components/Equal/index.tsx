@@ -34,7 +34,7 @@ const Equal: React.FC<EqualProps> = ({ setValue }) => {
   return (
     <Button
       onClick={handleEqual}
-      background="#FF5245"
+      $background="#FF5245"
       className="p-5 px-12 color h-1/2 rounded-lg my-5"
     >
       =

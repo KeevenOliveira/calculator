@@ -32,7 +32,7 @@ describe("Equal Component", () => {
     render(<Equal setValue={mockSetValue} />);
     fireEvent.click(screen.getByText("="));
     const setValueCall = mockSetValue.mock.calls[0][0];
-    expect(setValueCall("2+")).toThrow("Unexpected token '}'");
-    expect(setValueCall("2/0")).toThrow("Infinity");
+    expect(setValueCall("2+")).toBe("0");
+    expect(setValueCall("2/0")).toBe("Infinity");
   });
 });

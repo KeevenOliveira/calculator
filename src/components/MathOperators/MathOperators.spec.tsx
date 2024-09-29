@@ -1,27 +1,41 @@
-import { render } from "@testing-library/react";
-import { screen } from "@testing-library/dom";
+import React from "react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import MathOperators from ".";
 
-describe("MathOperators Component", () => {
-  it("renders all operators", () => {
-    const mockSetValue = jest.fn();
-    render(<MathOperators setValue={mockSetValue} />);
-    expect(screen.getByText("+")).toBeInTheDocument();
-    expect(screen.getByText("-")).toBeInTheDocument();
-    expect(screen.getByText("*")).toBeInTheDocument();
-    expect(screen.getByText("/")).toBeInTheDocument();
+describe("MathOperators", () => {
+  const setValueMock = jest.fn();
+
+  beforeEach(() => {
+    render(<MathOperators setValue={setValueMock} />);
   });
 
-  it("renders parentheses", () => {
-    const mockSetValue = jest.fn();
-    render(<MathOperators setValue={mockSetValue} />);
-    expect(screen.getByText("(")).toBeInTheDocument();
-    expect(screen.getByText(")")).toBeInTheDocument();
+  it("should render operators correctly", () => {
+    const operators = ["+", "-", "*", "/"];
+    operators.forEach((op) => {
+      expect(screen.getByText(op)).toBeInTheDocument();
+    });
   });
 
-  it("renders equal button", () => {
-    const mockSetValue = jest.fn();
-    render(<MathOperators setValue={mockSetValue} />);
+  it("should render parentheses correctly", () => {
+    const parentheses = ["(", ")"];
+    parentheses.forEach((p) => {
+      expect(screen.getByText(p)).toBeInTheDocument();
+    });
+  });
+
+  it("should render equal button correctly", () => {
     expect(screen.getByText("=")).toBeInTheDocument();
+  });
+
+  it("should call setValue when an operator is clicked", () => {
+    const operatorButton = screen.getByText("+");
+    fireEvent.click(operatorButton);
+    expect(setValueMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("should call setValue when equal button is clicked", () => {
+    const equalButton = screen.getByText("=");
+    fireEvent.click(equalButton);
+    expect(setValueMock).toHaveBeenCalledTimes(1);
   });
 });
