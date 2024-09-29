@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
 import MathOperators from ".";
 
-describe("MathOperators", () => {
+describe("<MathOperators/>", () => {
   const setValueMock = jest.fn();
 
   beforeEach(() => {

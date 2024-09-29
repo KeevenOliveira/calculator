@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
 import Equal from ".";
 
-describe("Equal Component", () => {
+describe("<Equal/>", () => {
   it("renders correctly", () => {
     const mockSetValue = jest.fn();
     render(<Equal setValue={mockSetValue} />);
