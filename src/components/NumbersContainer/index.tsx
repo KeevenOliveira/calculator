@@ -17,7 +17,7 @@ const NumbersContainer: React.FC<NumbersContainerProps> = ({ setValue }) => {
   return (
     <div>
       {numbers.map((row, rowIndex) => (
-        <div key={`row-${rowIndex}`}>
+        <div data-testid="numbers-container-row" key={`row-${rowIndex}`}>
           {row.map((num) => (
             <Number key={num} digit={num} setValue={setValue} />
           ))}

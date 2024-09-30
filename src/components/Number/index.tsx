@@ -15,7 +15,7 @@ const Number: React.FC<NumberProps> = ({ digit, setValue }) => {
   }, [digit, setValue]);
 
   return (
-    <Button className="p-5 px-12" onClick={handleClick}>
+    <Button data-testid="number" className="p-5 px-12" onClick={handleClick}>
       {digit}
     </Button>
   );
