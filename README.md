@@ -6,10 +6,32 @@ This is a calculator application built with Next.js, Tauri, and Tailwind CSS. It
 
 ## Table of Contents
 
+- [Technologies](#technologies)
 - [Installation](#installation)
 - [Scripts](#scripts)
 - [Dependencies](#dependencies)
 - [License](#license)
+
+## Technologies
+
+<div>
+    <a href="https://react.dev/" target="_blank">
+        <img style="width:30px; margin-right: 5px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+    </a>
+    <a  href="https://nextjs.org/" target="_blank">
+        <img style="width:30px; margin-right: 5px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-plain.svg" />
+    </a>
+    <a href="https://tailwindcss.com/" target="_blank">
+        <img style="width:30px; margin-right: 5px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+    </a>
+     <a href="https://tauri.app/" target="_blank">
+        <img style="width:30px; margin-right: 5px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tauri/tauri-original.svg" />
+    </a>
+     <a href="https://tauri.app/" target="_blank">
+       <img style="width:30px; margin-right: 5px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg" />
+    </a>
+
+</div>
 
 ## Installation
 
@@ -23,13 +45,13 @@ This is a calculator application built with Next.js, Tauri, and Tailwind CSS. It
 2. **Install dependencies:**
 
    ```bash
-    yarn install
+   yarn install
    ```
 
 3. **Install Rust**
 
    ```bash
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup. rs | sh
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup. rs | sh
    ```
 
    or consider the official Website of Rust Language, [here](https://www.rust-lang.org/tools/install).
@@ -39,7 +61,7 @@ This is a calculator application built with Next.js, Tauri, and Tailwind CSS. It
 - Start Development Server (if you need run just ):
 
   ```bash
-    yarn dev
+  yarn dev
   ```
 
 - Start desktop Server:
