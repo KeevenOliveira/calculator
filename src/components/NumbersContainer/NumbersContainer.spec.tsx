@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, waitFor } from "@testing-library/react";
 import NumbersContainer from ".";
 
-describe("NumbersContainer", () => {
+describe("<NumbersContainer/>", () => {
   it("renders correctly", () => {
     const setValue = jest.fn();
     const values = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0", "."];
