@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Calculator
 
-## Getting Started
+<img src="./public/calculator-project.jpeg" alt="project print"/>
 
-First, run the development server:
+This is a calculator application built with Next.js, Tauri, and Tailwind CSS. It provides a desktop application experience using Tauri while leveraging the power of React and Next.js for the frontend.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Installation](#installation)
+- [Scripts](#scripts)
+- [Dependencies](#dependencies)
+- [License](#license)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Clone the repository:**
 
-## Learn More
+   ```bash
+   git clone https://github.com/keevenoliveira/calculator.git
+   cd calculator
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+    yarn install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Install Rust**
 
-## Deploy on Vercel
+   ```bash
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup. rs | sh
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   or consider the official Website of Rust Language, [here](https://www.rust-lang.org/tools/install).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Scripts
+
+- Start Development Server (if you need run just ):
+
+  ```bash
+    yarn dev
+  ```
+
+- Start desktop Server:
+
+  ```bash
+  yarn desktop
+  ```
+
+- Run tests:
+
+  ```bash
+  yarn test
+  ```
+
+- Watch Tests:
+
+  ```bash
+  yarn test:watch
+  ```
+
+- Lint Code:
+
+  ```bash
+  yarn lint
+  ```
+
+## Dependencies
+
+- **@tauri-apps/api**: Tauri API for desktop integration
+- **next**: React framework for server-side rendering
+- **react & react-dom:**: Core React libraries
+- **react-toastify**: Notifications
+- **styled-components**: CSS-in-JS library
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.

@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "desktop": "tauri dev",
+    "build:desktop": "tauri build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "biome lint",
     "test": "jest",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --watchAll",
+    "coverage": "jest --coverage",
     "generate-styles": "npx tailwindcss -i ./src/styles/global.css -o ./src/styles/index.css --watch"
   },
   "dependencies": {
